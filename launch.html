@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Form and Table</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+    table {
+      margin-top: 20px;
+    }
+    table td {
+      padding: 5px;
+      
+    }
+    
+    
+  </style>
+    <style>
+      .form-check-label {
+        display: flex;
+        align-items: center;
+      }
+  
+      .form-check-label input[type="checkbox"],
+      .form-check-label input[type="radio"] {
+        margin-left: 5px;
+      }
+    </style>
+  
+</head>
+<body>
+  <div class="container"> <div class="container">
+   
+    
+    <script>
+      
+      
+      var form = document.createElement('form');
+      form.id = 'myForm';
+
+      
+      var firstNameGroup = document.createElement('div');
+      firstNameGroup.className = 'form-group';
+
+      var firstNameLabel = document.createElement('label');
+      firstNameLabel.setAttribute('for', 'firstName');
+      firstNameLabel.textContent = 'First Name:';
+      firstNameGroup.appendChild(firstNameLabel);
+
+      var firstNameInput = document.createElement('input');
+      firstNameInput.type = 'text';
+      firstNameInput.className = 'form-control';
+      firstNameInput.id = 'firstName';
+      firstNameInput.required = true;
+      firstNameGroup.appendChild(firstNameInput);
+
+      form.appendChild(firstNameGroup);
+
+      
+      var lastNameGroup = document.createElement('div');
+      lastNameGroup.className = 'form-group';
+
+      var lastNameLabel = document.createElement('label');
+      lastNameLabel.setAttribute('for', 'lastName');
+      lastNameLabel.textContent = 'Last Name:';
+      lastNameGroup.appendChild(lastNameLabel);
+
+      var lastNameInput = document.createElement('input');
+      lastNameInput.type = 'text';
+      lastNameInput.className = 'form-control';
+      lastNameInput.id = 'lastName';
+      lastNameInput.required = true;
+      lastNameGroup.appendChild(lastNameInput);
+
+      form.appendChild(lastNameGroup);
+
+      
+      var addressGroup = document.createElement('div');
+      addressGroup.className = 'form-group';
+
+      var addressLabel = document.createElement('label');
+      addressLabel.setAttribute('for', 'address');
+      addressLabel.textContent = 'Address:';
+      addressGroup.appendChild(addressLabel);
+
+      var addressInput = document.createElement('textarea');
+      addressInput.className = 'form-control';
+      addressInput.id = 'address';
+      addressInput.rows = '3';
+      addressInput.required = true;
+      addressGroup.appendChild(addressInput);
+
+      form.appendChild(addressGroup);
+
+      
+      var pincodeGroup = document.createElement('div');
+      pincodeGroup.className = 'form-group';
+
+      var pincodeLabel = document.createElement('label');
+      pincodeLabel.setAttribute('for', 'pincode');
+      pincodeLabel.textContent = 'Pincode:';
+      pincodeGroup.appendChild(pincodeLabel);
+
+      var pincodeInput = document.createElement('input');
+      pincodeInput.type = 'text';
+      pincodeInput.className = 'form-control';
+      pincodeInput.id = 'pincode';
+      pincodeInput.required = true;
+      pincodeGroup.appendChild(pincodeInput);
+
+      form.appendChild(pincodeGroup);
+
+      
+      
+      var genderGroup = document.createElement('div');
+      genderGroup.className = 'form-group';
+
+      var genderLabel = document.createElement('label');
+      genderLabel.textContent = 'Gender:';
+      genderGroup.appendChild(genderLabel);
+
+      var maleLabel = document.createElement('label');
+      maleLabel.className = 'form-check-label';
+      maleLabel.textContent = 'Male';
+      
+      var maleInput = document.createElement('input');
+      maleInput.type = 'radio';
+      maleInput.className = 'form-check-input';
+      maleInput.name = 'gender';
+      maleInput.value = 'male';
+      
+      
+
+
+
+      var femaleLabel = document.createElement('label');
+femaleLabel.className = 'form-check-label';
+femaleLabel.textContent = 'Female';
+
+var femaleInput = document.createElement('input');
+  femaleInput.type = 'radio';
+  femaleInput.className = 'form-check-input';
+  femaleInput.name = 'gender';
+  femaleInput.value = 'female';
+
+  genderGroup.appendChild(maleInput);
+  genderGroup.appendChild(maleLabel);
+  genderGroup.appendChild(femaleInput);
+  genderGroup.appendChild(femaleLabel);
+
+  form.appendChild(genderGroup);
+
+  
+
+
+
+  
+  var foodGroup = document.createElement('div');
+  foodGroup.className = 'form-group';
+
+  var foodLabel = document.createElement('label');
+  foodLabel.textContent = 'Choice of Food (Select at least 2):';
+  foodGroup.appendChild(foodLabel);
+
+  var burgerLabel = document.createElement('label');
+  burgerLabel.className = 'form-check-label';
+  burgerLabel.textContent = 'Burger';
+
+  var burgerInput = document.createElement('input');
+  burgerInput.type = 'checkbox';
+  burgerInput.className = 'form-check-input';
+  burgerInput.name = 'food';
+  burgerInput.value = 'burger';
+
+  var pizzaLabel = document.createElement('label');
+  pizzaLabel.className = 'form-check-label';
+  pizzaLabel.textContent = 'Pizza';
+
+  var pizzaInput = document.createElement('input');
+  pizzaInput.type = 'checkbox';
+  pizzaInput.className = 'form-check-input';
+  pizzaInput.name = 'food';
+  pizzaInput.value = 'pizza';
+
+  var pastaLabel = document.createElement('label');
+  pastaLabel.className = 'form-check-label';
+  pastaLabel.textContent = 'Pasta';
+
+  var pastaInput = document.createElement('input');
+  pastaInput.type = 'checkbox';
+  pastaInput.className = 'form-check-input';
+  pastaInput.name =     'food';
+  pastaInput.value =    'pasta';
+
+  foodGroup.appendChild(burgerInput);
+  foodGroup.appendChild(burgerLabel);
+  foodGroup.appendChild(pizzaInput);
+  foodGroup.appendChild(pizzaLabel);
+  foodGroup.appendChild(pastaInput);
+  foodGroup.appendChild(pastaLabel);
+
+  form.appendChild(foodGroup);
+
+ 
+  var stateGroup = document.createElement('div');
+  stateGroup.className = 'form-group';
+
+  var stateLabel = document.createElement('label');
+  stateLabel.setAttribute('for', 'state');
+  stateLabel.textContent = 'State:';
+  stateGroup.appendChild(stateLabel);
+
+  var stateInput = document.createElement('input');
+  stateInput.type = 'text';
+  stateInput.className = 'form-control';
+  stateInput.id = 'state';
+  stateInput.required = true;
+  stateGroup.appendChild(stateInput);
+
+  form.appendChild(stateGroup);
+
+  
+  var countryGroup = document.createElement('div');
+  countryGroup.className = 'form-group';
+
+  var countryLabel = document.createElement('label');
+  countryLabel.setAttribute('for', 'country');
+  countryLabel.textContent = 'Country:';
+  countryGroup.appendChild(countryLabel);
+
+  var countryInput = document.createElement('input');
+  countryInput.type = 'text';
+  countryInput.className = 'form-control';
+  countryInput.id = 'country';
+  countryInput.required = true;
+  countryGroup.appendChild(countryInput);
+
+  form.appendChild(countryGroup);
+
+  
+  var submitButton = document.createElement('button');
+  submitButton.type = 'submit';
+  submitButton.className = 'btn btn-primary';
+  submitButton.textContent = 'Submit';
+  form.appendChild(submitButton);
+
+  var table = document.createElement('table');
+  table.id = 'dataTable';
+  table.className = 'table';
+
+  var thead = document.createElement('thead');
+  var tr = document.createElement('tr');
+  
+  var container = document.querySelector('.container');
+  container.appendChild(form);
+  container.appendChild(table);
+</script>
+
+
+</div>
+</body>
+</html>
